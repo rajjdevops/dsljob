@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    options {
+        disableConcurrentBuilds()
+        timestamps()
+        buildDiscarder(logRotator(numTokeepstr: '10'))
+    }
+
     stages {
         stage('create baseline jobs') {
             steps {
@@ -16,12 +22,11 @@ pipeline {
                      folder('folder2') {
                           description 'folder2'
                         }
-                    }
 
-                    load ("maven.groovy")
-                    load("job2.groovy")  
-
-            }
+                        load ("maven.groovy')
+                        load("job2.groovy")
+                    }       
+               }
         }
     }
 }
