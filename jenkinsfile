@@ -22,8 +22,9 @@ pipeline {
                      folder('folder2') {
                           description 'folder2'
                         }
+                    """
 
-                        load ("maven.groovy')
+                        load("maven.groovy")
                         load("job2.groovy")
                 }       
             }
