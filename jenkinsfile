@@ -25,8 +25,8 @@ pipeline {
 
                         load ("maven.groovy')
                         load("job2.groovy")
-                    }       
-               }
+                }       
+            }
         }
     }
 }
