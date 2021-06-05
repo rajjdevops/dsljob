@@ -1,11 +1,8 @@
-pipeline {
-    agent any
+#/usr/bin/env groovy
 
-    options {
-        disableConcurrentBuilds()
-        timestamps()
-        buildDiscarder(logRotator(numTokeepstr: '10'))
-    }
+pipeline {
+    
+    agent any
 
     stages {
         stage('create baseline jobs') {
@@ -15,7 +12,6 @@ pipeline {
 
                      jobDsl scriptText:
                     """
-
                       folder('folder1') {
                             description 'folder1'
                         }
