@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    options {
+        disableConcurrentBuilds()
+        timestamps()
+        buildDiscarder(logRotator(numTokeepstr: '10'))
+    }
+
+    stages {
+        stage('create baseline jobs') {
+            steps {
+                script {
+                     echo 'creating folders'
+
+                     jobDsl scriptText:
+                    """
+
+                      folder('folder1') {
+                            description 'folder1'
+                        }
+                     folder('folder2') {
+                          description 'folder2'
+                        }
+                    }
+
+                    load ("maven.groovy")
+                    load("job.groovy")
+
+               
+
+            }
+        }
+    }
+}
