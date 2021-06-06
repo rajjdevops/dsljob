@@ -12,7 +12,8 @@ pipeline {
                 
                 sh """
                    job2.groovy
-                   maven.groovy 
+                   maven.groovy
+                   job3.groovy
                """
            }
             
